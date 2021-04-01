@@ -15,5 +15,8 @@ export default (props) => (
       onChange={(event) => props.handleNewTodoChange(event)}
       placeholder="What needs to be done?"
     />
+      value = {props.currentTodo}
+      onChange = {props.handleNewTodoChange}
+      placeholder="What needs to be done?"/>
   </form>
 );
