@@ -1,32 +1,25 @@
-const todos = [
-  {
-    id: 1,
-    name: "Buy Milk",
-    isComplete: false,
-  },
-  {
-    id: 2,
-    name: "Buy Eggs",
-    isComplete: false,
-  },
-  {
-    id: 3,
-    name: "Buy Bread",
-    isComplete: false,
-  },
-  {
-    id: 4,
-    name: "Make French Toast",
-    isComplete: false,
-  },
-];
-
 describe("App Initialization", () => {
-  it.only("Loads todos on page load", () => {
-    cy.server();
-    cy.route("GET", "/api/todos", todos);
-
-    cy.visit("/");
+  it("Loads todos on page load", () => {
+    cy.seedAndVisit();
     cy.get(".todo-list li").should("have.length", 4);
   });
+
+  it('Displays an error on failuer', () => {
+    cy.server();
+    cy.route({
+      method: 'GET',
+      url: '/api/todos',
+      method:'GET',
+      status: 500,
+      response: {}
+    });
+
+    cy.visit('/');
+
+    cy.get('.todo-list li')
+    .should('not.exist')
+
+    cy.get('.error')
+    .should('be.visible')
+  })
 });

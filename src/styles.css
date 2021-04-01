@@ -340,6 +340,13 @@ span.error {
 	text-decoration: underline;
 }
 
+.error {
+  background-color: red;
+  padding : 10px;
+  font-size: 35px;
+  color : white;
+}
+
 /*
 	Hack to remove background from Mobile Safari.
 	Can't use it globally since it destroys checkboxes in Firefox

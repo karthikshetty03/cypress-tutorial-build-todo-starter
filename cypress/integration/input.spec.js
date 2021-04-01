@@ -1,13 +1,13 @@
 describe("Input Form", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.seedAndVisit([]);
   });
 
   it("focuses input on load", () => {
     cy.focused().should("have.class", "new-todo");
   });
 
-  it.only("accepts input", () => {
+  it("accepts input", () => {
     const typedText = "Buy Milk";
     cy.get(".new-todo").type(typedText).should("have.value", typedText);
   });
@@ -21,7 +21,7 @@ describe("Input Form", () => {
         name: itemText,
         isComplete: false,
       });
-      cy.get(".new-todo").type("Buy Eggs").type("{enter}");
+      cy.get(".new-todo").type(itemText).type("{enter}");
       cy.get(".todo-list li").should("have.length", 1).and("contain", itemText);
     });
   });

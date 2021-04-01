@@ -12,6 +12,7 @@ export default class TodoApp extends Component {
     this.state = {
       todos: [],
       currentTodo: "",
+      error:false
     };
 
     this.handleNewTodoChange = this.handleNewTodoChange.bind(this);
@@ -19,7 +20,9 @@ export default class TodoApp extends Component {
   }
 
   componentDidMount() {
-    loadTodos().then(({ data }) => this.setState({ todos: data }));
+    loadTodos()
+      .then(({ data }) => this.setState({ todos: data }))
+      .catch(() => this.setState({ error: true }));
   }
 
   handleNewTodoChange(event) {
@@ -42,6 +45,7 @@ export default class TodoApp extends Component {
         <div>
           <header className="header">
             <h1>todos</h1>
+            {this.state.error === true ? <h1 class="error">Oh No !</h1> : <h1></h1>}
             <TodoForm
               handleNewTodoChange={this.handleNewTodoChange}
               handleTodoSubmit={this.handleTodoSubmit}
