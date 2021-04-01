@@ -49,7 +49,10 @@ export default class TodoApp extends Component {
             />
           </header>
           <section className="main">
-            <TodoList todos={this.state.todos} />
+            <TodoList 
+              handleNewTodoChange = {this.handleNewTodoChange}
+              currentTodo={this.currentTodo} 
+              todos={this.state.todos} />
           </section>
           <Footer />
         </div>
