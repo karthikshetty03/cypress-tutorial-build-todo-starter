@@ -5,7 +5,7 @@ const TodoItem = props =>
     <div className="view">
       <input className="toggle" type="checkbox" />
       <label>
-        {' '}
+        {props.todo.name}
       </label>
       <button className="destroy" />
     </div>
@@ -13,5 +13,5 @@ const TodoItem = props =>
 
 export default props =>
   <ul className="todo-list">
-    {props.todos.map(todo => <TodoItem />)}
+    {props.todos.map(todo => <TodoItem todo={todo} />)}
   </ul>
