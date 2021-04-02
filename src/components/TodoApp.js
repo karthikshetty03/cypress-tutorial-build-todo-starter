@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import { saveTodo, loadTodos } from "../lib/service";
+import { saveTodo, loadTodos, removeTodo } from "../lib/service";
 import Footer from "./Footer";
 
 export default class TodoApp extends Component {
@@ -12,11 +12,12 @@ export default class TodoApp extends Component {
     this.state = {
       todos: [],
       currentTodo: "",
-      error:false
+      error: false,
     };
 
     this.handleNewTodoChange = this.handleNewTodoChange.bind(this);
     this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -27,6 +28,13 @@ export default class TodoApp extends Component {
 
   handleNewTodoChange(event) {
     this.setState({ currentTodo: event.target.value });
+  }
+
+  handleDelete(id) {
+    removeTodo(id)
+      .then(() =>
+        this.setState({ todos: this.state.todos.filter((todo) => todo.id !== id) })
+      )
   }
 
   handleTodoSubmit(event) {
@@ -40,12 +48,14 @@ export default class TodoApp extends Component {
   }
 
   render() {
+    const remaining = this.state.todos.filter((todo) => !todo.isComplete)
+      .length;
     return (
       <Router>
         <div>
           <header className="header">
             <h1>todos</h1>
-            {this.state.error === true ? <h1 class="error">Oh No !</h1> : <h1></h1>}
+            {this.state.error ? <h1 class="error">Oh No !</h1> : null}
             <TodoForm
               handleNewTodoChange={this.handleNewTodoChange}
               handleTodoSubmit={this.handleTodoSubmit}
@@ -53,12 +63,13 @@ export default class TodoApp extends Component {
             />
           </header>
           <section className="main">
-            <TodoList 
-              handleNewTodoChange = {this.handleNewTodoChange}
-              currentTodo={this.currentTodo} 
-              todos={this.state.todos} />
+            <TodoList
+              handleDelete={this.handleDelete}
+              handleNewTodoChange={this.handleNewTodoChange}
+              todos={this.state.todos}
+            />
           </section>
-          <Footer />
+          <Footer remaining={remaining} />
         </div>
       </Router>
     );
