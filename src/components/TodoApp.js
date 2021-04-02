@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import { saveTodo, loadTodos, removeTodo } from "../lib/service";
+import { saveTodo, loadTodos, removeTodo, putTodo } from "../lib/service";
 import Footer from "./Footer";
 
 export default class TodoApp extends Component {
@@ -18,6 +18,7 @@ export default class TodoApp extends Component {
     this.handleNewTodoChange = this.handleNewTodoChange.bind(this);
     this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleTodoUpdate = this.handleTodoUpdate.bind(this);
   }
 
   componentDidMount() {
@@ -26,15 +27,34 @@ export default class TodoApp extends Component {
       .catch(() => this.setState({ error: true }));
   }
 
+  handleTodoUpdate(id) {
+    const targetTodo = this.state.todos.find((todo) => todo.id === id);
+    const updatedTodo = {
+      ...targetTodo,
+      isComplete: !targetTodo.isComplete,
+    };
+    putTodo(updatedTodo).then(({ data }) => {
+      const targetIndex = this.state.todos.findIndex(
+        (todo) => todo.id === data.id
+      );
+
+      const todosUpdated = this.state.todos.map((todo) =>
+        todo.id == data.id ? data : todo
+      );
+      this.setState({ todos: todosUpdated });
+    });
+  }
+
   handleNewTodoChange(event) {
     this.setState({ currentTodo: event.target.value });
   }
 
   handleDelete(id) {
-    removeTodo(id)
-      .then(() =>
-        this.setState({ todos: this.state.todos.filter((todo) => todo.id !== id) })
-      )
+    removeTodo(id).then(() =>
+      this.setState({
+        todos: this.state.todos.filter((todo) => todo.id !== id),
+      })
+    );
   }
 
   handleTodoSubmit(event) {
@@ -65,6 +85,7 @@ export default class TodoApp extends Component {
           <section className="main">
             <TodoList
               handleDelete={this.handleDelete}
+              handleTodoUpdate={this.handleTodoUpdate}
               handleNewTodoChange={this.handleNewTodoChange}
               todos={this.state.todos}
             />
