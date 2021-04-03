@@ -42,8 +42,9 @@
 
 
 ```
-```
 ###  Running:  footer.spec.js                                       (2 of 5)
+
+```
 
 
   Footer
