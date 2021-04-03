@@ -6,12 +6,10 @@
   Specs:    |  5 found (app-init.spec.js, footer.spec.js, input.spec.js, list-item.spec.js, smoke-test.spec.js)                                                               
 
 
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  app-init.spec.js                                                                (1 of 5)
+ ```                                                                                                   
+ ### Running:  app-init.spec.js                                                                (1 of 5)
 
-
-  App Initialization
+ ### App Initialization
 
     ✓ Loads todos on page load (772ms)
 
@@ -43,9 +41,9 @@
                           -starter/cypress/videos/app-init.spec.js.mp4                              
 
 
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  footer.spec.js                                                                  (2 of 5)
+```
+```
+###  Running:  footer.spec.js                                                                  (2 of 5)
 
 
   Footer
@@ -84,9 +82,9 @@
                           -starter/cypress/videos/footer.spec.js.mp4                                
 
 
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  input.spec.js                                                                   (3 of 5)
+```
+```
+###  Running:  input.spec.js                                                                   (3 of 5)
 
 
   Input Form
@@ -124,9 +122,10 @@
                           -starter/cypress/videos/input.spec.js.mp4                                 
 
 
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  list-item.spec.js                                                               (4 of 5)
+```
+```
+     
+###  Running:  list-item.spec.js                                                               (4 of 5)
 
 
   List Items
@@ -165,9 +164,9 @@
                           -starter/cypress/videos/list-item.spec.js.mp4                             
 
 
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  smoke-test.spec.js                                                              (5 of 5)
+```
+```
+###  Running:  smoke-test.spec.js                                                              (5 of 5)
 
 
   smoke tests
@@ -208,8 +207,8 @@
                           -starter/cypress/videos/smoke-test.spec.js.mp4                            
 
 
-====================================================================================================
-
+```
+```
   (Run Finished)
 
 
@@ -227,3 +226,4 @@
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
     ✔  All specs passed!                        00:10       16       16        -        -        -  
 
+```
