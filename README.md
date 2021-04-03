@@ -212,8 +212,10 @@
 
 
 ```
+
+ ### (Run Finished)
+
 ```
-  (Run Finished)
 
   ┌──────────────────────────────────────────────────────────────────────────┐
   │        Spec                  Tests  Passing  Failing  Pending  Skipped   │
