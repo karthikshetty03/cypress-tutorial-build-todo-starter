@@ -1,20 +1,9 @@
 ## Cypress Testing for Todo App
 
-
-> cypress-tutorial-build-todo-starter@1.0.0 cypress:all /home/karthikshetty03/ReactApps/cypress-tutorial-build-todo-starter
-> cypress run
-
-
-====================================================================================================
-
-  (Run Starting)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Cypress:    3.5.0                                                                              │
-  │ Browser:    Electron 73 (headless)                                                             │
-  │ Specs:      5 found (app-init.spec.js, footer.spec.js, input.spec.js, list-item.spec.js, smoke │
-  │             -test.spec.js)                                                                     │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+  Cypress:  |  3.5.0                                                                             
+  | ---------| ----------------------------------------------------------------------------------- |
+  Browser:  |  Electron 73 (headless)                                                             
+  Specs:    |  5 found (app-init.spec.js, footer.spec.js, input.spec.js, list-item.spec.js, smoke-test.spec.js)                                                               
 
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
