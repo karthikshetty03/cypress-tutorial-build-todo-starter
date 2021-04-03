@@ -1,5 +1,3 @@
-## Cypress Testing for Todo App
-
 
 > cypress-tutorial-build-todo-starter@1.0.0 cypress:all /home/karthikshetty03/ReactApps/cypress-tutorial-build-todo-starter
 > cypress run
@@ -23,10 +21,8 @@
 
 
   App Initialization
-
-    ✓ Loads todos on page load (772ms)
-
-    ✓ Displays an error on failuer (196ms)
+    ✓ Loads todos on page load (772ms)
+    ✓ Displays an error on failuer (196ms)
 
 
   2 passing (1s)
@@ -61,13 +57,10 @@
 
   Footer
     with a single todo
-
-      ✓ displays a singular todo in cuunt (791ms)
+      ✓ displays a singular todo in cuunt (791ms)
     with multiple todos
-
-      ✓ displays multiple todos (157ms)
-
-      ✓ Handles filter links (468ms)
+      ✓ displays multiple todos (157ms)
+      ✓ Handles filter links (468ms)
 
 
   3 passing (1s)
@@ -101,13 +94,10 @@
 
 
   Input Form
-
-    ✓ focuses input on load (741ms)
-
-    ✓ accepts input (386ms)
+    ✓ focuses input on load (741ms)
+    ✓ accepts input (386ms)
     Form Submission
-
-      ✓ Adds a new todo (396ms)
+      ✓ Adds a new todo (396ms)
 
 
   3 passing (2s)
@@ -141,14 +131,10 @@
 
 
   List Items
-
-    ✓ properly displays completed items (774ms)
-
-    ✓ Show remaining todos in the footer (140ms)
-
-    ✓ Removes a todo (406ms)
-
-    ✓ Marks an incomplete item complete (231ms)
+    ✓ properly displays completed items (774ms)
+    ✓ Show remaining todos in the footer (140ms)
+    ✓ Removes a todo (406ms)
+    ✓ Marks an incomplete item complete (231ms)
 
 
   4 passing (2s)
@@ -183,15 +169,11 @@
 
   smoke tests
     with no todos
-
-      ✓ Saves new todos (2124ms)
+      ✓ Saves new todos (2124ms)
     With active todos
-
-      ✓ Loads existing data from the database (580ms)
-
-      ✓ Deletes Todos (911ms)
-
-      ✓ Toggles todos (1149ms)
+      ✓ Loads existing data from the database (580ms)
+      ✓ Deletes Todos (911ms)
+      ✓ Toggles todos (1149ms)
 
 
   4 passing (5s)

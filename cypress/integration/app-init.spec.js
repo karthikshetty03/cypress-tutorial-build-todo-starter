@@ -4,22 +4,18 @@ describe("App Initialization", () => {
     cy.get(".todo-list li").should("have.length", 4);
   });
 
-  it('Displays an error on failuer', () => {
+  it("Displays an error on failuer", () => {
     cy.server();
     cy.route({
-      method: 'GET',
-      url: '/api/todos',
-      method:'GET',
+      method: "GET",
+      url: "/api/todos",
+      method: "GET",
       status: 500,
-      response: {}
+      response: {},
     });
 
-    cy.visit('/');
-
-    cy.get('.todo-list li')
-    .should('not.exist')
-
-    cy.get('.error')
-    .should('be.visible')
-  })
+    cy.visit("/");
+    cy.get(".todo-list li").should("not.exist");
+    cy.get(".error").should("be.visible");
+  });
 });

@@ -13,7 +13,7 @@ describe("Input Form", () => {
   });
 
   context("Form Submission", () => {
-    it.only("Adds a new todo", () => {
+    it("Adds a new todo", () => {
       const itemText = "Buy Eggs";
       cy.server();
       cy.route("POST", "/api/todos", {
