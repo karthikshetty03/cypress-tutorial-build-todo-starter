@@ -5,9 +5,9 @@
   Browser:  |  Electron 73 (headless)                                                             
   Specs:    |  5 found (app-init.spec.js, footer.spec.js, input.spec.js, list-item.spec.js, smoke-test.spec.js)                                                               
 
+ ### Running:  app-init.spec.js                                            (1 of 5)
 
  ```                                                                                                   
- ### Running:  app-init.spec.js                                            (1 of 5)
 
  ### App Initialization
 
@@ -83,8 +83,9 @@
 
 
 ```
-```
 ###  Running:  input.spec.js                                        (3 of 5)
+
+```
 
 
   Input Form
@@ -123,9 +124,10 @@
 
 
 ```
+###  Running:  list-item.spec.js                                      (4 of 5)
+
 ```
      
-###  Running:  list-item.spec.js                                      (4 of 5)
 
 
   List Items
@@ -165,8 +167,9 @@
 
 
 ```
-```
 ###  Running:  smoke-test.spec.js                                     (5 of 5)
+
+```
 
 
   smoke tests
