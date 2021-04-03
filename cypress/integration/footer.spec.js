@@ -15,11 +15,11 @@ describe("Footer", () => {
       cy.get(".todo-count").should("contain", "todos left");
     });
 
-    it.only("Handles filter links", () => {
+    it("Handles filter links", () => {
       const filters = [
         { link: "Active", expectedLength: 3 },
         { link: "Completed", expectedLength: 1 },
-        { link: "All", expectedLength: 1 },
+        { link: "All", expectedLength: 4 },
       ];
 
       cy.wrap(filters).each((filter) => {
